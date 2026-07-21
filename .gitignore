@@ -1,0 +1,27 @@
+# Dependências
+node_modules/
+
+# Arquivos compilados
+dist/
+
+# Cobertura dos testes
+coverage/
+
+# Variáveis de ambiente
+.env
+
+# Uploads (mantém a pasta, mas ignora os arquivos)
+uploads/*
+!uploads/.gitkeep
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Configurações do VS Code (opcional)
+.vscode/
