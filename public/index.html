@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,205 +8,252 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
+    <!-- Cabeçalho -->
+    <header>
 
-    <div class="logo">
-        <h1>🐾 PetCare</h1>
-        <span>Cuidando com amor do seu melhor amigo.</span>
-    </div>
+        <div class="logo">
+            <h1>PetCare</h1>
+            <p>Clínica Veterinária</p>
+        </div>
 
-    <nav>
-        <ul>
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#equipe">Equipe</a></li>
-            <li><a href="#contato">Contato</a></li>
-            <li><a class="botao-menu" href="consultas.html">Agendar</a></li>
-        </ul>
-    </nav>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
 
-</header>
+    </header>
 
-<section id="inicio" class="banner">
+    <!-- Banner -->
+    <section id="inicio" class="banner">
 
-    <div class="banner-texto">
+        <div class="banner-texto">
 
-        <h2>Seu pet merece o melhor cuidado.</h2>
+            <h2>Seu pet merece o melhor cuidado.</h2>
+
+            <p>
+                Atendimento veterinário especializado para cães, gatos e outros
+                animais de estimação, oferecendo segurança, qualidade e dedicação.
+            </p>
+
+            <a href="consultas.html" class="botao">
+                Agendar Consulta
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre">
+
+        <h2>Quem Somos</h2>
 
         <p>
-            Atendimento veterinário completo, consultas, vacinação,
-            exames laboratoriais, cirurgias e muito carinho para
-            cães, gatos e animais de estimação.
+            A PetCare é uma clínica veterinária comprometida com a saúde e o
+            bem-estar dos animais. Nossa equipe trabalha para oferecer um
+            atendimento de excelência, desde consultas preventivas até
+            procedimentos especializados.
         </p>
 
-        <a href="consultas.html">
-            <button>Agendar Consulta</button>
-        </a>
+    </section>
 
-    </div>
+    <!-- Serviços -->
+    <section id="servicos">
 
-</section>
+        <h2>Nossos Serviços</h2>
 
-<section id="sobre">
+        <div class="cards">
 
-    <h2>Quem Somos</h2>
+            <div class="card">
+                <h3>Cadastro de Animais</h3>
 
-    <p>
-        A PetCare é uma clínica veterinária dedicada à saúde,
-        prevenção e bem-estar dos animais.
-        Nossa missão é oferecer atendimento humanizado,
-        tecnologia e profissionais especializados para cuidar
-        do seu companheiro em todas as fases da vida.
-    </p>
+                <p>
+                    Registre e acompanhe todas as informações dos animais atendidos.
+                </p>
 
-</section>
+                <a href="animais.html">Acessar</a>
+            </div>
 
-<section id="servicos">
+            <div class="card">
+                <h3>Cadastro de Donos</h3>
 
-<h2>Nossos Serviços</h2>
+                <p>
+                    Gerencie os responsáveis pelos animais cadastrados.
+                </p>
 
-<div class="cards">
+                <a href="donos.html">Acessar</a>
+            </div>
 
-<div class="card">
-<h3> Cadastro de Animais</h3>
-<p>Gerencie todas as informações dos seus pets.</p>
-<a href="animais.html">Entrar</a>
-</div>
+            <div class="card">
+                <h3>Veterinários</h3>
 
-<div class="card">
-<h3> Cadastro de Donos</h3>
-<p>Cadastre os responsáveis pelos animais.</p>
-<a href="donos.html">Entrar</a>
-</div>
+                <p>
+                    Conheça nossa equipe de profissionais especializados.
+                </p>
 
-<div class="card">
-<h3> Veterinários</h3>
-<p>Conheça nossa equipe especializada.</p>
-<a href="veterinarios.html">Entrar</a>
-</div>
+                <a href="veterinarios.html">Acessar</a>
+            </div>
 
-<div class="card">
-<h3> Consultas</h3>
-<p>Agende e acompanhe consultas.</p>
-<a href="consultas.html">Entrar</a>
-</div>
+            <div class="card">
+                <h3>Consultas</h3>
 
-</div>
+                <p>
+                    Agende, acompanhe e gerencie consultas veterinárias.
+                </p>
 
-</section>
+                <a href="consultas.html">Acessar</a>
+            </div>
 
-<section>
+        </div>
 
-<h2>Por que escolher a PetCare?</h2>
+    </section>
 
-<div class="cards">
+    <!-- Diferenciais -->
+    <section id="diferenciais">
 
-<div class="card">
-<h3> Atendimento Humanizado</h3>
-<p>Cuidamos de cada pet como parte da nossa família.</p>
-</div>
+        <h2>Por que escolher nossa clínica?</h2>
 
-<div class="card">
-<h3> Estrutura Moderna</h3>
-<p>Equipamentos modernos para exames e tratamentos.</p>
-</div>
+        <div class="cards">
 
-<div class="card">
-<h3>🩺 Veterinários Especialistas</h3>
-<p>Profissionais experientes e capacitados.</p>
-</div>
+            <div class="card">
+                <h3>Atendimento Humanizado</h3>
 
-<div class="card">
-<h3> Emergência</h3>
-<p>Atendimento para casos de urgência.</p>
-</div>
+                <p>
+                    Tratamos cada animal com atenção, respeito e dedicação.
+                </p>
+            </div>
 
-</div>
+            <div class="card">
+                <h3>Equipe Especializada</h3>
 
-</section>
+                <p>
+                    Veterinários capacitados para oferecer o melhor atendimento.
+                </p>
+            </div>
 
-<section id="equipe">
+            <div class="card">
+                <h3>Estrutura Moderna</h3>
 
-<h2>Nossa Equipe</h2>
+                <p>
+                    Equipamentos e ambiente preparados para cuidar do seu pet.
+                </p>
+            </div>
 
-<div class="cards">
+        </div>
 
-<div class="card">
-<img src="https://via.placeholder.com/180">
-<h3>Dr. Igon Bessa</h3>
-<p>Clínico Geral</p>
-</div>
+    </section>
 
-<div class="card">
-<img src="https://via.placeholder.com/180">
-<h3>Dra. Melissa Rodrigues</h3>
-<p>Especialista em Felinos</p>
-</div>
+    <!-- Equipe -->
+    <section id="equipe">
 
-<div class="card">
-<img src="https://via.placeholder.com/180">
-<h3>Dra. Eduarda Lorrany</h3>
-<p>Cirurgião Veterinário</p>
-</div>
+        <h2>Nossa Equipe</h2>
 
-</div>
+        <div class="cards">
 
-</section>
+            <div class="card">
+                <img src="imagens/veterinario1.jpg" alt="Veterinário">
 
-<section id="contato">
+                <h3>Dr. Igon Bessa</h3>
 
-<h2>Fale Conosco</h2>
+                <p>Médico Veterinário</p>
+            </div>
 
-<form>
+            <div class="card">
+                <img src="imagens/veterinaria1.jpg" alt="Veterinária">
 
-<input type="text" placeholder="Nome">
+                <h3>Dra. Melissa Rodrigues</h3>
 
-<input type="email" placeholder="E-mail">
+                <p>Especialista em Clínica Geral</p>
+            </div>
 
-<input type="text" placeholder="Telefone">
+            <div class="card">
+                <img src="imagens/veterinario2.jpg" alt="Veterinário">
 
-<textarea rows="5" placeholder="Mensagem"></textarea>
+                <h3>Dra. Eduarda Lorrany</h3>
 
-<button>Enviar Mensagem</button>
+                <p>Cirurgiã Veterinária</p>
+            </div>
 
-</form>
+        </div>
 
-</section>
+    </section>
 
-<section id="informacoes">
+    <!-- Galeria -->
+    <section id="galeria">
 
-<h2>Informações</h2>
+        <h2>Galeria</h2>
 
-<p> Rua dos Animais, 123 - Centro</p>
+        <div class="galeria">
 
-<p> (84) 98840-2625</p>
+            <img src="imagens/foto1.jpg" alt="Clínica">
+            <img src="imagens/foto2.jpg" alt="Atendimento">
+            <img src="imagens/foto3.jpg" alt="Consultório">
+            <img src="imagens/foto4.jpg" alt="Paciente">
 
-<p> contato@petcare.com</p>
+        </div>
 
-<p> Segunda a Sexta - 08h às 18h</p>
+    </section>
 
-<p> Sábado - 08h às 13h</p>
+    <!-- Contato -->
+    <section id="contato">
 
-</section>
+        <h2>Entre em Contato</h2>
 
-<footer>
+        <form>
 
-<h3>PetCare Clínica Veterinária</h3>
+            <input type="text" placeholder="Nome">
 
-<p>
-Cuidando do seu melhor amigo desde 2025.
-</p>
+            <input type="email" placeholder="E-mail">
 
-<p>
-Instagram | Facebook | WhatsApp
-</p>
+            <input type="text" placeholder="Telefone">
 
-<p>© Todos os direitos reservados.</p>
+            <textarea rows="5" placeholder="Mensagem"></textarea>
 
-</footer>
+            <button type="submit">Enviar</button>
+
+        </form>
+
+    </section>
+
+    <!-- Informações -->
+    <section id="informacoes">
+
+        <h2>Informações</h2>
+
+        <p><strong>Endereço:</strong> Rua dos Animais, 123 - Centro</p>
+
+        <p><strong>Telefone:</strong> (11) 99999-9999</p>
+
+        <p><strong>E-mail:</strong> contato@petcare.com</p>
+
+        <p><strong>Horário:</strong> Segunda a Sexta, das 08h às 18h</p>
+
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+
+        <h3>PetCare Clínica Veterinária</h3>
+
+        <p>
+            Cuidando da saúde e do bem-estar dos animais com responsabilidade,
+            dedicação e carinho.
+        </p>
+
+        <p>
+            © 2026 PetCare. Todos os direitos reservados.
+        </p>
+
+    </footer>
 
 </body>
+
 </html>
