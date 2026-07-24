@@ -43,7 +43,9 @@ router.post("/", (req, res) => {
         req.body.data,
         req.body.hora,
         req.body.motivo,
-        req.body.status
+        req.body.status,
+        req.body.idAnimal,
+        req.body.idVeterinario
     );
 
     consultas.push(novaConsulta);
