@@ -17,4 +17,5 @@ app.get("/", (req, res) => {
 app.use("/api/animais", animalRoutes);
 app.use("/api/consultas", consultaRoutes);
 
+
 export default app;
