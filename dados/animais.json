@@ -4,7 +4,39 @@
     "nome": "Rex",
     "especie": "Cachorro",
     "idade": 5,
-    "peso": 12.5,
+    "peso": 18.5,
+    "foto": "https://exemplo.com/imagens/rex.jpg"
+  },
+  {
+    "id": 2,
+    "nome": "Mingau",
+    "especie": "Gato",
+    "idade": 3,
+    "peso": 4.2,
+    "foto": "https://exemplo.com/imagens/mingau.jpg"
+  },
+  {
+    "id": 3,
+    "nome": "Luna",
+    "especie": "Coelho",
+    "idade": 2,
+    "peso": 2.1,
     "foto": null
+  },
+  {
+    "id": 4,
+    "nome": "Thor",
+    "especie": "Cachorro",
+    "idade": 7,
+    "peso": 28.9,
+    "foto": null
+  },
+  {
+    "id": 5,
+    "nome": "Nina",
+    "especie": "Papagaio",
+    "idade": 4,
+    "peso": 0.8,
+    "foto": "https://exemplo.com/imagens/nina.jpg"
   }
 ]
