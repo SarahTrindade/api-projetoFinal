@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 
 import animalRoutes from "./routes/animalRoutes";
 import consultaRoutes from "./routes/consultaRoutes";
@@ -9,17 +10,18 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.json({
-    sucesso: true,
-    mensagem: "API Clínica Veterinária funcionando!"
-  });
-}); 
+// Servir arquivos da pasta public
+app.use(express.static(path.join(__dirname, "../public")));
 
+// Página inicial
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+
+// Rotas da API
 app.use("/api/animais", animalRoutes);
 app.use("/api/consultas", consultaRoutes);
 app.use("/api/donos", donoRoutes);
 app.use("/api/veterinarios", veterinarioRoutes);
 
 export default app;
-
