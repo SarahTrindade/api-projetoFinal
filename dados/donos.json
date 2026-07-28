@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "nome": "João da Silva",
+        "telefone": "(84) 99999-9999",
+        "email": "joao@email.com",
+        "endereco": "Rua das Flores, 123"
+      }
+]
