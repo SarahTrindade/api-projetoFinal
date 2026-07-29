@@ -11,8 +11,11 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
 
 
+// Rotas da API
 app.use("/api/animais", animalRoutes);
 app.use("/api/consultas", consultaRoutes);
+app.use("/api/donos", donoRoutes);
+app.use("/api/veterinarios", veterinarioRoutes);
 app.use("/api/donos", donoRoutes);
 app.use("/api/veterinarios", veterinarioRoutes);
 
