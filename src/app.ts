@@ -5,6 +5,7 @@ import animalRoutes from "./routes/animalRoutes";
 import consultaRoutes from "./routes/consultaRoutes";
 import donoRoutes from "./routes/donoRoutes";
 import veterinarioRoutes from "./routes/veterinarioRoutes"
+import authRoutes from "./routes/authRoutes";
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use("/api/consultas", consultaRoutes);
 app.use("/api/donos", donoRoutes);
 app.use("/api/veterinarios", veterinarioRoutes);
 app.use("/api/veterinarios", veterinarioRoutes);
+app.use("/api/auth", authRoutes);
 
 
 app.get("/teste", (req, res) => {
