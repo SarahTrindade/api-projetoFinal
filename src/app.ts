@@ -6,6 +6,7 @@ import consultaRoutes from "./routes/consultaRoutes";
 import donoRoutes from "./routes/donoRoutes";
 import veterinarioRoutes from "./routes/veterinarioRoutes"
 import authRoutes from "./routes/authRoutes";
+import usuarioRoutes from "./routes/usuarioRoutes";
 
 const app = express();
 
@@ -37,6 +38,7 @@ app.use("/api/veterinarios", veterinarioRoutes);
 app.use("/api/veterinarios", veterinarioRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/uploads", express.static("uploads"));
+app.use("/api/usuarios", usuarioRoutes);
 
 
 app.get("/teste", (req, res) => {
