@@ -48,7 +48,8 @@ export class AnimalRepository {
     nome: string,
     especie: string,
     idade: number,
-    peso: number
+    peso: number,
+    foto: string | null
   ): Promise<Animal> {
 
     const erros = Animal.validar({
@@ -72,7 +73,8 @@ export class AnimalRepository {
       nome.trim(),
       especie.trim(),
       idade,
-      peso
+      peso,
+      foto
     );
 
     animais.push(novoAnimal);

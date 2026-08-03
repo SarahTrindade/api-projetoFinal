@@ -30,6 +30,7 @@ app.use("/api/donos", donoRoutes);
 app.use("/api/veterinarios", veterinarioRoutes);
 app.use("/api/veterinarios", veterinarioRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/uploads", express.static("uploads"));
 
 
 app.get("/teste", (req, res) => {

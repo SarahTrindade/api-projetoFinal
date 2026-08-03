@@ -29,12 +29,14 @@ export class AnimalController {
     static async cadastrar(req: Request, res: Response): Promise<void> {
         try {
             const { nome, especie, idade, peso } = req.body;
+            const foto = req.file ? req.file.filename : null;
 
             const animal = await repository.criar(
                 nome,
                 especie,
                 Number(idade),
-                Number(peso)
+                Number(peso),
+                foto
             );
 
             res.status(201).json({
