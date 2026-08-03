@@ -3,34 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        #conteudo {
+            display: none;
+            padding: 30px;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Login</h1>
+    <div id="loading">
+        Carregando...
+    </div>
 
-    <form action="/login" method="POST">
+    <div id="conteudo">
 
-        <label>E-mail</label><br>
-        <input
-            type="email"
-            name="email"
-            placeholder="Digite seu e-mail"
-            required
-        ><br><br>
+        <h1>Login</h1>
 
-        <label>Senha</label><br>
-        <input
-            type="password"
-            name="senha"
-            placeholder="Digite sua senha"
-            required
-        ><br><br>
+        <form action="/login" method="POST">
 
-        <button type="submit">
-            Entrar
-        </button>
+            <label>E-mail</label><br>
+            <input
+                type="email"
+                name="email"
+                placeholder="Digite seu e-mail"
+                required
+            ><br><br>
 
-    </form>
+            <label>Senha</label><br>
+            <input
+                type="password"
+                name="senha"
+                placeholder="Digite sua senha"
+                required
+            ><br><br>
+
+            <button type="submit">
+                Entrar
+            </button>
+
+        </form>
+
+    </div>
+
+    <script>
+        window.onload = function () {
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("conteudo").style.display = "block";
+        };
+    </script>
 
 </body>
 </html>
