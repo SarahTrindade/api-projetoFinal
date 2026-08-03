@@ -5,6 +5,10 @@ const repository = new UsuarioRepository();
 
 export class AuthController {
 
+    static loginPage(req: Request, res: Response): void {
+        res.render("login");
+    }
+
     static async cadastro(req: Request, res: Response): Promise<void> {
         try {
             const { nome, email, senha } = req.body;
@@ -58,8 +62,17 @@ export class AuthController {
 
 
     static async logout(req: Request, res: Response): Promise<void> {
-        res.status(200).json({
-            mensagem: "Logout realizado com sucesso!"
+        req.session.destroy((erro) => {
+            if (erro) {
+                res.status(500).json({
+                    mensagem: "Erro ao realizar logout."
+                });
+                return;
+            }
+    
+            res.status(200).json({
+                mensagem: "Logout realizado com sucesso!"
+            });
         });
     }
 }
