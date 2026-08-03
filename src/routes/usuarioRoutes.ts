@@ -24,9 +24,10 @@ router.post("/login", async (req, res) => {
 
     // Validação dos campos
     if (!email || !senha) {
-        return res.status(400).json({
-            sucesso: false,
-            mensagem: "E-mail e senha são obrigatórios."
+        return res.status(200).json({
+            sucesso: true,
+            mensagem: "Login realizado com sucesso.",
+            usuario: req.session.usuario
         });
     }
 
@@ -39,6 +40,12 @@ router.post("/login", async (req, res) => {
                 mensagem: "E-mail ou senha inválidos."
             });
         }
+
+        req.session.usuario = {
+            id: usuario.id,
+            nome: usuario.nome,
+            email: usuario.email
+        };
 
         res.status(200).json({
             sucesso: true,
