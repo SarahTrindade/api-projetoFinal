@@ -85,7 +85,12 @@ export class Usuario {
         );
     }
 
-    toJSON(): object {
+    toJSON(): {
+        id: number;
+        nome: string;
+        email: string;
+        senha: string;
+    } {
         return {
             id: this._id,
             nome: this._nome,
@@ -93,4 +98,4 @@ export class Usuario {
             senha: this._senha
         };
     }
-}
+    }
