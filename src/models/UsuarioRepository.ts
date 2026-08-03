@@ -26,7 +26,7 @@ export class UsuarioRepository {
   }
 
   async listar(): Promise<Usuario[]> {
-    return await this.carregar();
+    return this.carregar();
   }
 
   async buscarPorEmail(email: string): Promise<Usuario | undefined> {
@@ -55,7 +55,9 @@ export class UsuarioRepository {
 
     const usuarios = await this.carregar();
 
-    if (usuarios.some((u) => u.email === email)) {
+    const emailExiste = usuarios.some((u) => u.email === email);
+
+if (emailExiste) {
       throw new Error("E-mail já cadastrado.");
     }
 
