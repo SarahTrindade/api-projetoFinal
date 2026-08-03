@@ -5,18 +5,29 @@ const router = Router();
 const repository = new UsuarioRepository();
 
 router.post("/cadastro", async (req, res) => {
-    const { nome, email, senha } = req.body;
+    // cadastro...
+});
 
-    try {
-        const usuario = await repository.criar(nome, email, senha);
+router.post("/login", async (req, res) => {
+    const { email, senha } = req.body;
 
-        res.status(201).json(usuario);
-    } catch (erro: any) {
-        res.status(400).json({
+    const usuario = await repository.validarLogin(email, senha);
+
+    if (!usuario) {
+        return res.status(401).json({
             sucesso: false,
-            mensagem: erro.message
+            mensagem: "E-mail ou senha inválidos."
         });
     }
+
+    res.json({
+        sucesso: true,
+        usuario: {
+            id: usuario.id,
+            nome: usuario.nome,
+            email: usuario.email
+        }
+    });
 });
 
 export default router;

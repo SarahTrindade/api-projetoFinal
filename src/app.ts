@@ -35,7 +35,6 @@ app.use("/api/animais", animalRoutes);
 app.use("/api/consultas", consultaRoutes);
 app.use("/api/donos", donoRoutes);
 app.use("/api/veterinarios", veterinarioRoutes);
-app.use("/api/veterinarios", veterinarioRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/uploads", express.static("uploads"));
 app.use("/api/usuarios", usuarioRoutes);
