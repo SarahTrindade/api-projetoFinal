@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { Consulta } from "../entities/Consulta";
+import { verificarLogin } from "../middlewares/authMiddleware";
 
 const router = Router();
 
@@ -7,13 +8,13 @@ const router = Router();
 let consultas: Consulta[] = [];
 
 // GET - listar todas as consultas
-router.get("/", (req, res) => {
+router.get("/",verificarLogin,  (req, res) => {
     res.json(consultas.map(c => c.toJSON()));
 });
 
 
 // GET - buscar consulta por id
-router.get("/:id", (req, res) => {
+router.get("/:id", verificarLogin, (req, res) => {
     const id = Number(req.params.id);
 
     const consulta = consultas.find(c => c.id === id);
@@ -29,7 +30,7 @@ router.get("/:id", (req, res) => {
 
 
 // POST - criar consulta
-router.post("/", (req, res) => {
+router.post("/", verificarLogin,  (req, res) => {
     const erros = Consulta.validar(req.body);
 
     if (erros.length > 0) {
@@ -55,7 +56,7 @@ router.post("/", (req, res) => {
 
 
 // PUT - atualizar consulta
-router.put("/:id", (req, res) => {
+router.put("/:id", verificarLogin,  (req, res) => {
     const id = Number(req.params.id);
 
     const consulta = consultas.find(c => c.id === id);
@@ -87,7 +88,7 @@ router.put("/:id", (req, res) => {
 
 
 // DELETE - excluir consulta
-router.delete("/:id", (req, res) => {
+router.delete("/:id", verificarLogin, (req, res) => {
     const id = Number(req.params.id);
 
     const index = consultas.findIndex(c => c.id === id);

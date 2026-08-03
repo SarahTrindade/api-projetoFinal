@@ -1,5 +1,7 @@
 import { Router, Request, Response } from "express";
 import { Dono } from "../entities/Dono";
+import { verificarLogin } from "../middlewares/authMiddleware";
+
 
 const router = Router();
 
@@ -7,12 +9,12 @@ const router = Router();
 let donos: Dono[] = [];
 
 // GET - listar todos os donos
-router.get("/", (req: Request, res: Response) => {
+router.get("/", verificarLogin,  (req: Request, res: Response) => {
     res.json(donos.map(d => d.toJSON()));
 });
 
 // GET - buscar dono por id
-router.get("/:id", (req: Request, res: Response) => {
+router.get("/:id", verificarLogin, (req: Request, res: Response) => {
     const id = Number(req.params.id);
 
     const dono = donos.find(d => d.id === id);
@@ -27,7 +29,7 @@ router.get("/:id", (req: Request, res: Response) => {
 });
 
 // POST - criar dono
-router.post("/", (req: Request, res: Response) => {
+router.post("/", verificarLogin, (req: Request, res: Response) => {
 
     const erros = Dono.validar(req.body);
 
@@ -49,7 +51,7 @@ router.post("/", (req: Request, res: Response) => {
 });
 
 // PUT - atualizar dono
-router.put("/:id", (req: Request, res: Response) => {
+router.put("/:id", verificarLogin, (req: Request, res: Response) => {
 
     const id = Number(req.params.id);
 
@@ -81,7 +83,7 @@ router.put("/:id", (req: Request, res: Response) => {
 });
 
 // DELETE - excluir dono
-router.delete("/:id", (req: Request, res: Response) => {
+router.delete("/:id", verificarLogin, (req: Request, res: Response) => {
 
     const id = Number(req.params.id);
 

@@ -3,12 +3,13 @@
 
 import { Router } from "express";
 import { VeterinarioRepository } from "../models/VeterinarioRepository";
+import { verificarLogin } from "../middlewares/authMiddleware";
 
 const router = Router();
 const repository = new VeterinarioRepository();
 
 // Listar veterinários
-router.get("/", async (req, res) => {
+router.get("/", verificarLogin, async (req, res) => {
   try {
     const termo = req.query.busca as string | undefined;
     const veterinarios = await repository.listar(termo);
@@ -20,7 +21,7 @@ router.get("/", async (req, res) => {
 });
 
 // Buscar veterinário por ID
-router.get("/:id", async (req, res) => {
+router.get("/:id", verificarLogin, async (req, res) => {
   try {
     const id = Number(req.params.id);
 
@@ -38,7 +39,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // Criar veterinário
-router.post("/", async (req, res) => {
+router.post("/", verificarLogin, async (req, res) => {
   try {
 
     const { nome, crmv, especialidade, telefone } = req.body;
@@ -62,7 +63,7 @@ router.post("/", async (req, res) => {
 });
 
 // Atualizar veterinário
-router.put("/:id", async (req, res) => {
+router.put("/:id", verificarLogin, async (req, res) => {
 
   try {
 
@@ -89,7 +90,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // Remover veterinário
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", verificarLogin, async (req, res) => {
 
   try {
 

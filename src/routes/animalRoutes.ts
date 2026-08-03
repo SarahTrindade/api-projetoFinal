@@ -1,12 +1,13 @@
 import { Router } from "express";
 import { AnimalController } from "../controllers/AnimalController";
+import { verificarLogin } from "../middlewares/authMiddleware";
 
 const router = Router();
 
-router.get("/", AnimalController.listar);
-router.get("/:id", AnimalController.buscarPorId);
-router.post("/", AnimalController.cadastrar);
-router.put("/:id", AnimalController.atualizar);
-router.delete("/:id", AnimalController.excluir);
+router.get("/", verificarLogin, AnimalController.listar);
+router.get("/:id", verificarLogin, AnimalController.buscarPorId);
+router.post("/", verificarLogin, AnimalController.cadastrar);
+router.put("/:id", verificarLogin, AnimalController.atualizar);
+router.delete("/:id", verificarLogin, AnimalController.excluir);
 
 export default router;
