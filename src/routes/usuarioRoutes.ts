@@ -42,9 +42,9 @@ router.post("/login", async (req, res) => {
         const usuario = await repository.validarLogin(email, senha);
 
         if (!usuario) {
-            return res.status(401).json({
+            return res.status(400).json({
                 sucesso: false,
-                mensagem: "E-mail ou senha inválidos."
+                mensagem: "E-mail e senha são obrigatórios."
             });
         }
 

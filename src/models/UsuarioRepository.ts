@@ -55,9 +55,11 @@ export class UsuarioRepository {
 
     const usuarios = await this.carregar();
 
-    const emailExiste = usuarios.some((u) => u.email === email);
-
-if (emailExiste) {
+    const emailExiste = usuarios.some(
+      (u) => u.email.toLowerCase() === email.toLowerCase()
+    );
+    
+    if (emailExiste) {
       throw new Error("E-mail já cadastrado.");
     }
 
