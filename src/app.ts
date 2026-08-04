@@ -38,19 +38,6 @@ app.use("/api/auth", authRoutes);
 app.use("/uploads", express.static("uploads"));
 app.use("/api/usuarios", usuarioRoutes);
 
-
-app.get("/teste", (req, res) => {
-    req.session.usuario = {
-      id: 1,
-      nome: "Sarah",
-      email: "sarah@email.com",
-    };
-  
-    res.json({
-      mensagem: "Sessão criada!",
-      usuario: req.session.usuario,
-    });
-  });
   
   
   export default app;
