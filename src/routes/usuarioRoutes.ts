@@ -1,8 +1,15 @@
 import { Router } from "express";
 import { UsuarioRepository } from "../models/UsuarioRepository";
-
+import { verificarLogin } from "../middlewares/authMiddleware";
 const router = Router();
 const repository = new UsuarioRepository();
+
+router.get("/perfil", verificarLogin, (req, res) => {
+    res.json({
+        sucesso: true,
+        usuario: req.session.usuario
+    });
+});
 
 router.post("/cadastro", async (req, res) => {
     const { nome, email, senha } = req.body;

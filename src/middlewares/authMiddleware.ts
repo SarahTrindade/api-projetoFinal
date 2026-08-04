@@ -5,10 +5,12 @@ export function verificarLogin(
   res: Response,
   next: NextFunction
 ) {
-  if (!req.session.usuario) {
+  const usuario = req.session.usuario;
+
+  if (!usuario) {
     return res.status(401).json({
       sucesso: false,
-      mensagem: "Faça login para acessar esta rota."
+      mensagem: "Usuário não autenticado."
     });
   }
 
