@@ -29,7 +29,7 @@ export class AnimalController {
     static async cadastrar(req: Request, res: Response): Promise<void> {
         try {
             const { nome, especie, idade, peso } = req.body;
-            const foto = req.file ? req.file.filename : null;
+            const foto = req.file ? `/uploads/${req.file.filename}` : null;
 
             const animal = await repository.criar(
                 nome,
