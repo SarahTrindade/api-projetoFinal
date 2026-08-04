@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas - Pet Care</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <h1>Consultas veterinárias</h1>
+
+    <a href="/">Voltar para início</a>
+
+
+    <h2>Agendar consulta</h2>
+
+    <form action="/consultas" method="POST">
+
+        <label>Data:</label>
+        <input 
+            type="date" 
+            name="data" 
+            required
+        >
+
+
+        <label>Hora:</label>
+        <input 
+            type="time" 
+            name="hora" 
+            required
+        >
+
+
+        <label>Motivo:</label>
+        <input 
+            type="text" 
+            name="motivo"
+            required
+        >
+
+
+        <label>Status:</label>
+        <select name="status">
+
+            <option value="Agendada">
+                Agendada
+            </option>
+
+            <option value="Concluída">
+                Concluída
+            </option>
+
+            <option value="Cancelada">
+                Cancelada
+            </option>
+
+        </select>
+
+
+        <label>ID do Animal:</label>
+        <input 
+            type="number" 
+            name="idAnimal"
+            required
+        >
+
+
+        <label>ID do Veterinário:</label>
+        <input 
+            type="number" 
+            name="idVeterinario"
+            required
+        >
+
+
+        <button type="submit">
+            Cadastrar consulta
+        </button>
+
+    </form>
+
+
+
+    <h2>Consultas cadastradas</h2>
+
+
+    <% if (consultas && consultas.length > 0) { %>
+
+
+        <% consultas.forEach(consulta => { %>
+
+            <div class="card">
+
+                <p>
+                    Data:
+                    <%= consulta.data %>
+                </p>
+
+
+                <p>
+                    Horário:
+                    <%= consulta.hora %>
+                </p>
+
+
+                <p>
+                    Motivo:
+                    <%= consulta.motivo %>
+                </p>
+
+
+                <p>
+                    Status:
+                    <%= consulta.status %>
+                </p>
+
+
+            </div>
+
+
+        <% }) %>
+
+
+    <% } else { %>
+
+        <p>
+            Nenhuma consulta cadastrada.
+        </p>
+
+    <% } %>
+
+
+</body>
+
+</html>
