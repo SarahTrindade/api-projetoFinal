@@ -16,7 +16,6 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.json());
 app.use(
     session({
       secret: "petcare-secret",
@@ -52,5 +51,7 @@ app.get("/teste", (req, res) => {
       usuario: req.session.usuario,
     });
   });
+
+  
   
   export default app;

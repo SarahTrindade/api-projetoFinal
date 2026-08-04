@@ -5,6 +5,11 @@ const repository = new AnimalRepository();
 
 export class AnimalController {
 
+    static async tela(req: Request, res: Response): Promise<void> {
+        const animais = await repository.listar();
+        res.render("animais", { animais });
+    }
+
     static async listar(req: Request, res: Response): Promise<void> {
         const termo = req.query.q as string | undefined;
 

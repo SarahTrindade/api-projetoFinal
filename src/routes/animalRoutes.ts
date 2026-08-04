@@ -6,6 +6,7 @@ import upload from "../middlewares/uploadMiddleware";
 
 const router = Router();
 
+router.get("/tela", verificarLogin, AnimalController.tela);
 router.get("/", verificarLogin, AnimalController.listar);
 router.get("/:id", verificarLogin, AnimalController.buscarPorId);
 

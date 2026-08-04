@@ -1,0 +1,15 @@
+<h1>Animais</h1>
+
+<% animais.forEach(animal => { %>
+
+<div>
+
+    <p><%= animal.nome %></p>
+
+    <% if(animal.foto){ %>
+        <img src="<%= animal.foto %>" width="150">
+    <% } %>
+
+</div>
+
+<% }) %>
