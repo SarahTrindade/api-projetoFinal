@@ -65,9 +65,8 @@ export class AuthController {
                 res.render("login", {
                     mensagem: "Email ou senha inválidos."
                 });
-
+            
                 return;
-
             }
 
 
