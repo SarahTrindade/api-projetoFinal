@@ -51,7 +51,6 @@ app.get("/teste", (req, res) => {
       usuario: req.session.usuario,
     });
   });
-
   
   
   export default app;
