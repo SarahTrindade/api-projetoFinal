@@ -7,7 +7,12 @@ export class AnimalController {
 
     static async tela(req: Request, res: Response): Promise<void> {
         const animais = await repository.listar();
-        res.render("animais", { animais });
+        res.render("animais", {
+            animais,
+            flash: req.session.flash
+        });
+        
+        delete req.session.flash;
     }
 
     static async listar(req: Request, res: Response): Promise<void> {

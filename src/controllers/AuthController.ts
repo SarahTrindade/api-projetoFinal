@@ -72,9 +72,9 @@ export class AuthController {
 
 
             req.session.usuarioId = usuario.id;
-
-
-            res.redirect("/animais");
+            res.render("login", {
+                mensagem: "Login realizado com sucesso!"
+            });
 
 
         } catch (erro: any) {
@@ -111,4 +111,3 @@ export class AuthController {
     }
 
     }
-
