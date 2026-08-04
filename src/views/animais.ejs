@@ -1,29 +1,98 @@
-<h1>Animais</h1>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animais - Pet Care</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <h1>Animais cadastrados</h1>
+
+    <a href="/">Voltar para início</a>
+
+    <h2>Cadastrar animal</h2>
+
+    <form action="/animais" method="POST">
+
+        <label>Nome:</label>
+        <input 
+            type="text" 
+            name="nome" 
+            required
+        >
+
+        <label>Espécie:</label>
+        <input 
+            type="text" 
+            name="especie" 
+            required
+        >
+
+        <label>Idade:</label>
+        <input 
+            type="number" 
+            name="idade" 
+            required
+        >
+
+        <label>Peso:</label>
+        <input 
+            type="number" 
+            name="peso" 
+            step="0.1"
+            required
+        >
+
+        <button type="submit">
+            Cadastrar
+        </button>
+
+    </form>
 
 
-<% if (flash) { %>
-
-    <p>
-        <%= flash %>
-    </p>
-
-<% } %>
+    <h2>Lista de animais</h2>
 
 
+    <% if (animais && animais.length > 0) { %>
 
-<% animais.forEach(animal => { %>
+        <% animais.forEach(animal => { %>
 
-<div>
+            <div class="card">
 
-    <p><%= animal.nome %></p>
+                <h3>
+                    <%= animal.nome %>
+                </h3>
 
-    <% if(animal.foto){ %>
+                <p>
+                    Espécie: <%= animal.especie %>
+                </p>
 
-        <img src="<%= animal.foto %>" width="150">
+                <p>
+                    Idade: <%= animal.idade %> anos
+                </p>
+
+                <p>
+                    Peso: <%= animal.peso %> kg
+                </p>
+
+            </div>
+
+        <% }) %>
+
+
+    <% } else { %>
+
+        <p>
+            Nenhum animal cadastrado.
+        </p>
 
     <% } %>
 
-</div>
 
+</body>
 
-<% }) %>
+</html>
