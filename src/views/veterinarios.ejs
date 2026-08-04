@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinários - Pet Care</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <h1>Veterinários cadastrados</h1>
+
+    <a href="/">
+        Voltar para início
+    </a>
+
+
+    <h2>Cadastrar veterinário</h2>
+
+    <form action="/veterinarios" method="POST">
+
+        <label>Nome:</label>
+
+        <input 
+            type="text" 
+            name="nome"
+            required
+        >
+
+
+        <label>Especialidade:</label>
+
+        <input 
+            type="text" 
+            name="especialidade"
+            required
+        >
+
+
+        <label>CRMV:</label>
+
+        <input 
+            type="text" 
+            name="crmv"
+            required
+        >
+
+
+        <button type="submit">
+            Cadastrar
+        </button>
+
+    </form>
+
+
+
+    <h2>Lista de veterinários</h2>
+
+
+    <% if (veterinarios && veterinarios.length > 0) { %>
+
+
+        <% veterinarios.forEach(veterinario => { %>
+
+
+            <div class="card">
+
+                <h3>
+                    <%= veterinario.nome %>
+                </h3>
+
+
+                <p>
+                    Especialidade:
+                    <%= veterinario.especialidade %>
+                </p>
+
+
+                <p>
+                    CRMV:
+                    <%= veterinario.crmv %>
+                </p>
+
+
+            </div>
+
+
+        <% }) %>
+
+
+    <% } else { %>
+
+
+        <p>
+            Nenhum veterinário cadastrado.
+        </p>
+
+
+    <% } %>
+
+
+</body>
+
+</html>
