@@ -478,3 +478,34 @@ footer{
         padding:60px 6%;
     }
 }
+
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+
+.lista {
+    margin-top: 40px;
+}
+
+
+.lista .card {
+    margin-bottom: 20px;
+}
+
+
+.voltar {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+.voltar:hover {
+    color: var(--cor-hover);
+}
