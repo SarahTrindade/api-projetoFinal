@@ -22,62 +22,64 @@
     <form action="/consultas" method="POST">
 
         <label>Data:</label>
-        <input 
-            type="date" 
-            name="data" 
-            required
-        >
+<input 
+    type="date" 
+    name="data"
+    required
+>
 
 
-        <label>Hora:</label>
-        <input 
-            type="time" 
-            name="hora" 
-            required
-        >
+<label>Hora:</label>
+<input 
+    type="time" 
+    name="hora"
+    required
+>
 
 
-        <label>Motivo:</label>
-        <input 
-            type="text" 
-            name="motivo"
-            required
-        >
+<label>Motivo:</label>
+<input 
+    type="text" 
+    name="motivo"
+    required
+    minlength="3"
+>
 
 
-        <label>Status:</label>
-        <select name="status">
+<label>Status:</label>
+<select name="status" required>
 
-            <option value="Agendada">
-                Agendada
-            </option>
+    <option value="Agendada">
+        Agendada
+    </option>
 
-            <option value="Concluída">
-                Concluída
-            </option>
+    <option value="Concluída">
+        Concluída
+    </option>
 
-            <option value="Cancelada">
-                Cancelada
-            </option>
+    <option value="Cancelada">
+        Cancelada
+    </option>
 
-        </select>
-
-
-        <label>ID do Animal:</label>
-        <input 
-            type="number" 
-            name="idAnimal"
-            required
-        >
+</select>
 
 
-        <label>ID do Veterinário:</label>
-        <input 
-            type="number" 
-            name="idVeterinario"
-            required
-        >
+<label>ID do Animal:</label>
+<input 
+    type="number" 
+    name="idAnimal"
+    required
+    min="1"
+>
 
+
+<label>ID do Veterinário:</label>
+<input 
+    type="number" 
+    name="idVeterinario"
+    required
+    min="1"
+>
 
         <button type="submit">
             Cadastrar consulta

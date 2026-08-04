@@ -22,32 +22,30 @@
 
         <label>Nome:</label>
         <input 
-            type="text" 
-            name="nome" 
-            required
-        >
-
-        <label>Espécie:</label>
-        <input 
-            type="text" 
-            name="especie" 
-            required
-        >
-
-        <label>Idade:</label>
-        <input 
-            type="number" 
-            name="idade" 
-            required
-        >
-
-        <label>Peso:</label>
-        <input 
-            type="number" 
-            name="peso" 
-            step="0.1"
-            required
-        >
+        type="text" 
+        name="nome"
+        required
+    >
+    
+    <input 
+        type="text" 
+        name="especie"
+        required
+    >
+    
+    <input 
+        type="number" 
+        name="idade"
+        required
+        min="0"
+    >
+    
+    <input 
+        type="number" 
+        name="peso"
+        required
+        min="0"
+    >
 
         <button type="submit">
             Cadastrar
