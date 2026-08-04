@@ -91,29 +91,24 @@ export class AuthController {
 
 
 
-    static async logout(req: Request, res: Response): Promise<void> {
+    static logout(req: Request, res: Response): void {
 
         req.session.destroy((erro) => {
-
-
+    
             if (erro) {
-
-                res.status(500).json({
-                    mensagem: "Erro ao realizar logout."
-                });
-
+    
+                res.status(500).send("Erro ao realizar logout.");
+    
                 return;
-
+    
             }
-
-
-            res.status(200).json({
-                mensagem: "Logout realizado com sucesso!"
-            });
-
-
+    
+    
+            res.redirect("/login");
+    
         });
+    
+    }
 
     }
 
-}
