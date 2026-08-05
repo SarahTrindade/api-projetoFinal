@@ -15,10 +15,12 @@ A aplicação permite o cadastro e gerenciamento de animais, donos, veterinário
 - Express
 - EJS
 - Express Session
+- Jest
+- Supertest
+- Multer
+- Bcrypt
 - JSON
 - CSS
-
----
 
 ## Instalação
 
@@ -57,6 +59,14 @@ npm start
 ```
 
 ---
+
+## Executar os testes
+
+Para executar todos os testes:
+
+```bash
+npm test
+```
 
 ## Rotas Principais
 
@@ -98,4 +108,8 @@ npm start
 
 ## Autores
 
-Eduarda Lorrany, Igon César. Melissa Rodrigues, Sarah Trindade e Sofia Lara
+- Eduarda Lorrany.
+- Igon César.
+- Melissa Rodrigues.
+- Sarah Trindade.
+- Sofia Lara.
